@@ -1,0 +1,47 @@
+Bits 31:10 
+Reserved, must be kept at reset value
+
+Биты 31:10
+Зарезервировано, должно быть сохранено значение сброса
+
+Bit 9 JCNR: Injected channel not ready
+This bit is set and cleared by hardware after the JSQR register is written. It indicates if a new
+injected conversion can be launched (by setting the JSWSTART bit).
+0: Injected channel ready
+1: Injected channel not ready, JSWSTART must not be set
+
+Бит 9 JCNR: введенный канал не готов
+Этот бит устанавливается и сбрасывается аппаратно после записи регистра JSQR. Указывает, если новый
+может быть запущено внедренное преобразование (установкой бита JSWSTART).
+0: введенный канал готов
+1: Введенный канал не готов, JSWSTART не должен быть установлен
+
+Bit 8 RCNR: Regular channel not ready
+This bit is set and cleared by hardware after one of the SQRx register is written or after the
+OVR bit is cleared. It indicates if a new regular conversion can be launched (by setting the
+SWSTART bit).
+0: Regular channel ready
+1: Regular channel not ready, SWSTART must not be set
+
+Бит 8 RCNR: обычный канал не готов
+Этот бит устанавливается и сбрасывается аппаратно после записи в один из регистров SQRx или после
+Бит OVR очищен. Указывает, можно ли запустить новую обычную конверсию (установив параметр
+бит SWSTART).
+0: обычный канал готов
+1: Обычный канал не готов, SWSTART не нужно устанавливать
+
+Bit 7 Reserved, must be kept at reset value
+
+Бит 7 Зарезервировано, должно быть сохранено значение сброса
+
+Bit 6 ADONS: ADC ON status
+This bit is set and cleared by hardware to indicate if the ADC is ready to convert.
+0: The ADC is not ready
+1: The ADC is ready to convert. External triggers can be enabled, the SWSTART and
+JSWSTART bits can be set.
+
+Бит 6 ADONS: состояние ADC ON
+Этот бит устанавливается и сбрасывается аппаратно, чтобы указать, готов ли АЦП к преобразованию.
+0: АЦП не готов
+1: АЦП готов к преобразованию. Можно включить внешние триггеры, SWSTART и
+Биты JSWSTART могут быть установлены.

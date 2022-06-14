@@ -1,0 +1,154 @@
+Analog-to-digital converter (ADC)
+
+Аналого-цифровой преобразователь (АЦП)
+
+Bits 15:13 DISCNUM[2:0]: Discontinuous mode channel count
+These bits are written by software to define the number of channels to be converted in
+discontinuous mode, after receiving an external trigger.
+000: 1 channel
+001: 2 channels
+...
+111: 8 channels
+Note: This bit must be written only when ADON=0.
+
+Биты 15:13 DISCNUM[2:0]: количество каналов в прерывистом режиме.
+Эти биты записываются программным обеспечением для определения количества каналов, которые необходимо преобразовать в
+прерывистый режим, после получения внешнего триггера.
+000: 1 канал
+001: 2 канала
+...
+111: 8 каналов
+Примечание. Этот бит должен быть записан только тогда, когда ADON=0. 
+
+Bit 12 JDISCEN: Discontinuous mode on injected channels
+This bit is set and cleared by software to enable/disable discontinuous mode on the injected
+channels of a group.
+0: Discontinuous mode on injected channels disabled
+1: Discontinuous mode on injected channels enabled
+Note: This bit must be written only when ADON=0.
+
+Бит 12 JDISCEN: Прерывистый режим на введенных каналах
+Этот бит устанавливается и сбрасывается программным обеспечением для включения/отключения прерывистого режима на вводимом
+каналы группы.
+0: Прерывистый режим на введенных каналах отключен
+1: Прерывистый режим на введенных каналах включен
+Примечание. Этот бит должен быть записан только тогда, когда ADON=0.
+
+Bit 11 DISCEN: Discontinuous mode on regular channels
+This bit is set and cleared by software to enable/disable Discontinuous mode on regular
+channels.
+0: Discontinuous mode on regular channels disabled
+1: Discontinuous mode on regular channels enabled
+Note: This bit must be written only when ADON=0.
+
+Бит 11 DISCEN: Прерывистый режим на обычных каналах
+Этот бит устанавливается и сбрасывается программным обеспечением для включения/отключения прерывистого режима в обычном режиме.
+каналы.
+0: Прерывистый режим на обычных каналах отключен.
+1: прерывистый режим на обычных каналах включен
+Примечание. Этот бит должен быть записан только тогда, когда ADON=0.
+
+Bit 10 JAUTO: Automatic injected group conversion
+This bit is set and cleared by software to enable/disable automatic injected group conversion
+after regular group conversion.
+0: Automatic injected group conversion disabled
+1: Automatic injected group conversion enabled
+Note: This bit must be written only when ADON=0.
+
+Бит 10 JAUTO: Автоматическое преобразование группы впрыска
+Этот бит устанавливается и сбрасывается программным обеспечением, чтобы включить/отключить автоматическое преобразование введенной группы.
+после обычной групповой конвертации.
+0: Автоматическое преобразование введенной группы отключено.
+1: включено автоматическое преобразование введенной группы
+Примечание. Этот бит должен быть записан только тогда, когда ADON=0.
+
+Bit 9 AWDSGL: Enable the watchdog on a single channel in scan mode
+This bit is set and cleared by software to enable/disable the analog watchdog on the channel
+identified by the AWDCH[4:0] bits.
+0: Analog watchdog enabled on all channels
+1: Analog watchdog enabled on a single channel
+
+Бит 9 AWDSGL: включить сторожевой таймер на одном канале в режиме сканирования
+Этот бит устанавливается и сбрасывается программно для включения/отключения аналогового сторожевого таймера на канале.
+определяется битами AWDCH[4:0].
+0: Аналоговый сторожевой таймер включен на всех каналах.
+1: Аналоговый сторожевой таймер включен на одном канале.
+
+Bit 8 SCAN: Scan mode
+This bit is set and cleared by software to enable/disable the Scan mode. In the Scan mode,
+the inputs selected through the ADC_SQRx or ADC_JSQRx registers are converted.
+0: Scan mode disabled
+1: Scan mode enabled
+Note: This bit must be written only when ADON=0.
+
+Бит 8 SCAN: режим сканирования
+Этот бит устанавливается и сбрасывается программным обеспечением для включения/отключения режима сканирования. В режиме сканирования,
+входы, выбранные через регистры ADC_SQRx или ADC_JSQRx, преобразуются.
+0: режим сканирования отключен
+1: режим сканирования включен
+Примечание. Этот бит должен быть записан только тогда, когда ADON=0.
+Bit 7 JEOCIE: Interrupt enable for injected channels
+This bit is set and cleared by software to enable/disable the end of conversion interrupt for
+injected channels.
+0: JEOC interrupt disabled
+1: JEOC interrupt enabled. An interrupt is generated when the JEOC bit is set.
+Бит 7 JEOCIE: разрешение прерывания для введенных каналов
+Этот бит устанавливается и сбрасывается программно, чтобы разрешить/запретить прерывание окончания преобразования для
+инжектированные каналы.
+0: прерывание JEOC отключено
+1: прерывание JEOC разрешено. Прерывание генерируется при установке бита JEOC.
+
+Bit 6 AWDIE: Analog watchdog interrupt enable
+This bit is set and cleared by software to enable/disable the analog watchdog interrupt. In
+Scan mode if the watchdog thresholds are crossed, scan is aborted only if this bit is enabled.
+0: Analog watchdog interrupt disabled
+1: Analog watchdog interrupt enabled
+
+Bit 6 AWDIE: Analog watchdog interrupt enable
+This bit is set and cleared by software to enable/disable the analog watchdog interrupt. In
+Scan mode if the watchdog thresholds are crossed, scan is aborted only if this bit is enabled.
+0: Analog watchdog interrupt disabled
+1: Analog watchdog interrupt enabled
+
+Бит 6 AWDIE: разрешение прерывания аналогового сторожевого таймера
+Этот бит устанавливается и сбрасывается программным обеспечением для включения/выключения аналогового сторожевого прерывания. В
+Режим сканирования: если пороги сторожевого таймера превышены, сканирование прерывается только в том случае, если этот бит включен.
+0: Прерывание аналогового сторожевого таймера отключено.
+1: прерывание аналогового сторожевого таймера разрешено
+
+Bit 5 EOCIE: Interrupt enable for EOC
+This bit is set and cleared by software to enable/disable the end of conversion interrupt.
+0: EOC interrupt disabled
+1: EOC interrupt enabled. An interrupt is generated when the EOC bit is set
+
+Бит 5 EOCIE: разрешение прерывания для EOC
+Этот бит устанавливается и сбрасывается программно, чтобы разрешить/запретить прерывание окончания преобразования.
+0: прерывание EOC отключено
+1: прерывание EOC разрешено. Прерывание генерируется при установке бита EOC.
+
+Bits 4:0 AWDCH[4:0]: Analog watchdog channel select bits
+These bits are set and cleared by software. They select the input channel to be guarded by
+the analog watchdog.
+00000: ADC analog input Channel0
+00001: ADC analog input Channel1
+...
+11000: ADC analog input Channel24
+11001: ADC analog input Channel25
+11010: ADC analog input Channel26
+Other values reserved.
+Note: ADC1 analog inputs Channel16, Channel 17 and Channel26 are internally connected
+to the temperature sensor, to VREFINT and to VCOMP, respectively.
+
+Биты 4:0 AWDCH[4:0]: биты выбора аналогового сторожевого канала.
+Эти биты устанавливаются и очищаются программным обеспечением. Они выбирают входной канал, который будет охраняться
+аналоговый сторожевой таймер.
+00000: Аналоговый вход АЦП Канал 0
+00001: Аналоговый вход АЦП Канал 1
+...
+11000: Аналоговый вход АЦП Канал 24
+11001: Аналоговый вход АЦП Канал 25
+11010: Аналоговый вход АЦП Канал 26
+Другие значения зарезервированы.
+Примечание. Аналоговые входы АЦП1 Канал 16, Канал 17 и Канал 26 имеют внутреннее соединение.
+к датчику температуры, к VREFINT и к VCOMP соответственно.
+
