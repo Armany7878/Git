@@ -1,0 +1,31 @@
+class Enemy
+{
+
+public:
+  virtual void attck(){
+
+	}
+
+};
+
+class Ninja:public Enemy
+{
+public:
+
+	void attck(){
+
+		cout << "Ninja -" <<endl;
+	}
+
+};
+
+class Monstr:public Enemy
+{
+public:
+
+	void attck(){
+
+		cout << "Monstr -"  <<endl;
+	}
+
+};
